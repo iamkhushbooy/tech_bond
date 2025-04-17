@@ -18,7 +18,7 @@ const Form = () => {
             setMessage('');
         }
         if (res.status === "success") {
-            router.push("/create_profile");
+            router.push("/");
         }
     };
     return (
