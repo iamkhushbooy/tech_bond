@@ -7,8 +7,8 @@ import Form from './Form'
 
 const page = async () => {
     const session = await auth()
-    if (session) {
-        redirect('/create_profile')
+    if (!session) {
+        redirect('/signUp')
     }
 
     return (
