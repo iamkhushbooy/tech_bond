@@ -7,10 +7,9 @@ import Form from './Form'
 
 const page = async () => {
     const session = await auth()
-    if (!session) {
-        redirect('/signUp')
-    }
-
+    if (session?.user) {
+        redirect('/create_profile')
+      }
     return (
         <div className="flex justify-center items-center h-screen
          bg-black text-white">
@@ -46,7 +45,6 @@ const page = async () => {
                 
                 {/* credential form */}
                 <Form/>
-
                 <p className="text-center mt-4 text-gray-600">
                     Already have an account? <a href="/signIn" 
                     className="text-blue-600  underline">Sign In</a>
