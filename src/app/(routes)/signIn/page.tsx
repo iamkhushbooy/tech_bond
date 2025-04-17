@@ -9,8 +9,8 @@ import { auth } from '@/auth'
 import { redirect } from 'next/navigation'
 const page =async () => {
     const session = await auth()
-    if (session) {
-        redirect('/')
+    if (!session) {
+        redirect('/signIn')
     }
     return (
         <div className="flex justify-center items-center h-screen
